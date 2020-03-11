@@ -10,7 +10,7 @@ import static ru.girchev.Utils.print;
 public class Test3BinaryGap {
 
     public static void main(String[] args) {
-        print("Test", executeInBenchmark(() -> solution(529))); //1000010001
+        print("BinaryGap:", executeInBenchmark(() -> solution(529))); //1000010001
     }
 
     public static int solution(int n) {

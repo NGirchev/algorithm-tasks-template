@@ -100,4 +100,21 @@ public class Task1 {
         }
         return -1;
     }
+
+//    TEST1
+//    solution1 without stream:10005 time:435
+//    solution2 set:10005 time:449
+//    solution3 list:10005 time:89
+//    TEST2
+//    solution1 without stream:1000000 time:68
+//    solution2 set:1000000 time:69
+//    solution3 list:null time:3000
+//    TEST3
+//    solution1 without stream:1000000 time:244
+//    solution2 set:1000000 time:203
+//    solution3 list:null time:3000
+//    TEST4
+//    solution1 without stream:1000000 time:1028
+//    solution2 set:1000000 time:197
+//    solution3 list:null time:3000
 }

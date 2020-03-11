@@ -1,6 +1,5 @@
 package ru.girchev;
 
-import lombok.SneakyThrows;
 import org.apache.commons.lang3.tuple.Pair;
 
 import java.util.concurrent.*;
@@ -12,13 +11,17 @@ import java.util.function.Supplier;
  */
 public class Utils {
 
-    private final static ExecutorService executorService = Executors.newSingleThreadExecutor();
+    private final static ThreadFactory threadFactory;
+    private final static ExecutorService executorService;
+
+    static {
+        threadFactory = new com.google.common.util.concurrent.ThreadFactoryBuilder().setDaemon(true).build();
+        executorService = Executors.newFixedThreadPool(1, threadFactory);
+    }
 
     public static <T> Pair<Long, T> executeInBenchmark(Supplier<T> supplier) {
-        FutureTask<Pair<Long, T>> tFuture = new FutureTask<>(() -> wrapMeasurements(supplier));
-//        executorService.submit(tFuture);
-        new Thread(tFuture).start();
-        return extractResult(tFuture);
+        Future<Pair<Long, T>> submit = executorService.submit(() -> wrapMeasurements(supplier));
+        return extractResult(submit);
     }
 
     private static <T> Pair<Long, T> wrapMeasurements(Supplier<T> supplier) {
@@ -28,7 +31,7 @@ public class Utils {
         return Pair.of((l2-l1)/1000000, result);
     }
 
-    private static <T> Pair<Long, T> extractResult(FutureTask<Pair<Long, T>> tFuture) {
+    private static <T> Pair<Long, T> extractResult(Future<Pair<Long, T>> tFuture) {
         Pair<Long, T> result = null;
         try {
             result = tFuture.get(3L, TimeUnit.SECONDS);

@@ -28,7 +28,7 @@ import static ru.girchev.Utils.print;
  * @author Girchev N.A.
  * Date: 10.03.2020
  */
-public class Task1 {
+public class Task1FindFirstMissingNumber {
 
     public static void main(String[] args) {
         System.out.println("TEST1");

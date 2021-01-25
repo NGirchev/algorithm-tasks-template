@@ -10,10 +10,10 @@ import java.util.List;
  */
 public class Task1Sequence {
 
-    private static List<Integer> input = Arrays.asList(3, 6, 9, 2, 1, 5);
+    private static final List<Integer> INPUT = Arrays.asList(3, 6, 9, 2, 1, 5);
 
     public static void main(String[] args) {
-        System.out.println("result: " + format(input)); // result: 1-3,5-6,9
+        System.out.println("result: " + format(INPUT)); // result: 1-3,5-6,9
     }
 
     public static String format(List<Integer> in) {

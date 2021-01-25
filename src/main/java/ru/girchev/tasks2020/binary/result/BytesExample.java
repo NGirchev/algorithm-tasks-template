@@ -1,10 +1,10 @@
-package ru.girchev;
+package ru.girchev.tasks2020.binary.result;
 
 /**
  * @author Girchev N.A.
  * Date: 11.03.2020
  */
-public class Test4Bytes {
+public class BytesExample {
 
     public static void main(String[] args) {
         System.out.println(0x1 == 1);
@@ -49,7 +49,7 @@ public class Test4Bytes {
 
         byte a4 = -8;                                       //1111 1000
 
-        System.out.println("-8 >>> 1 = " + (a4 >>> 1));     //  2147483644
+        System.out.println("-8 >>> 1 = " + (a4 >>> 1));     //2147483644
 
         int a5 = 6;                                         //0000 0111
 

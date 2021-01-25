@@ -1,4 +1,4 @@
-package ru.girchev;
+package ru.girchev.tasks2020.string.result;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +12,7 @@ import static ru.girchev.Utils.print;
  * @author Girchev N.A.
  * Date: 11.03.2020
  */
-public class Task5Concatenation {
+public class ConcatenationComparisons {
 
     private static List<String> createBigArray(int size) {
         List<String> strings = new ArrayList<>();

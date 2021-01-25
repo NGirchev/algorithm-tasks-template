@@ -1,4 +1,4 @@
-package ru.girchev;
+package ru.girchev.tasks2020.binary.result;
 
 import static ru.girchev.Utils.executeInBenchmark;
 import static ru.girchev.Utils.print;
@@ -7,7 +7,7 @@ import static ru.girchev.Utils.print;
  * @author Girchev N.A.
  * Date: 11.03.2020
  */
-public class Test3BinaryGap {
+public class Test1BinaryGapSolution1 {
 
     public static void main(String[] args) {
         print("BinaryGap:", executeInBenchmark(() -> solution(529))); //1000010001

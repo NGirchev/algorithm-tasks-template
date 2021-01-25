@@ -1,4 +1,4 @@
-package ru.girchev;
+package ru.girchev.tasks2020.fibonacci.result;
 
 import java.util.stream.IntStream;
 
@@ -11,33 +11,33 @@ import static ru.girchev.Utils.print;
  * @author Girchev N.A.
  * Date: 10.03.2020
  */
-public class Task2Fibonacci {
+public class Task1FibonacciSolution1 {
 
     public static void main(String[] args) {
         System.out.println("TEST1 get 6 number");
-        print("Fibonacci recursive:", executeInBenchmark(() -> fibonacci1(6)));
-        print("Fibonacci iteration:", executeInBenchmark(() -> fibonacci2(6)));
-        print("Fibonacci stream:", executeInBenchmark(() -> fibonacci3(6)));
+        print("Fibonacci recursive:", executeInBenchmark(() -> fibonacciRecursive(6)));
+        print("Fibonacci iteration:", executeInBenchmark(() -> fibonacciIteration(6)));
+        print("Fibonacci stream:", executeInBenchmark(() -> fibonacciStream(6)));
 
         System.out.println("TEST1 get 42 number");
-        print("Fibonacci recursive:", executeInBenchmark(() -> fibonacci1(42)));
-        print("Fibonacci iteration:", executeInBenchmark(() -> fibonacci2(42)));
-        print("Fibonacci stream:", executeInBenchmark(() -> fibonacci3(42)));
+        print("Fibonacci recursive:", executeInBenchmark(() -> fibonacciRecursive(42)));
+        print("Fibonacci iteration:", executeInBenchmark(() -> fibonacciIteration(42)));
+        print("Fibonacci stream:", executeInBenchmark(() -> fibonacciStream(42)));
     }
 
 
-    public static int fibonacci1(int n) {
+    public static int fibonacciRecursive(int n) {
         if (n == 0) {
             return 0;
         } else if (n == 1) {
             return 1;
         } else {
-            return fibonacci1(n - 1) +
-                    fibonacci1(n - 2);
+            return fibonacciRecursive(n - 1) +
+                    fibonacciRecursive(n - 2);
         }
     }
 
-    public static int fibonacci2(int n) {
+    public static int fibonacciIteration(int n) {
         if (n == 0) {
             return 0;
         } else if (n == 1 || n == 2) {
@@ -55,7 +55,7 @@ public class Task2Fibonacci {
         }
     }
 
-    public static int fibonacci3(int n) {
+    public static int fibonacciStream(int n) {
         if (n == 0) {
             return 0;
         } else {

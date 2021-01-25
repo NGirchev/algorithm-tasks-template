@@ -1,4 +1,4 @@
-package ru.girchev;
+package ru.girchev.tasks2020.number.result;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -7,28 +7,7 @@ import java.util.stream.IntStream;
 import static ru.girchev.Utils.executeInBenchmark;
 import static ru.girchev.Utils.print;
 
-/**
- * Write a function:
- *
- * class Solution { public int solution(int[] A); }
- *
- * that, given an array A of N integers, returns the smallest positive integer (greater than 0) that does not occur in A.
- *
- * For example, given A = [1, 3, 6, 4, 1, 2], the function should return 5.
- *
- * Given A = [1, 2, 3], the function should return 4.
- *
- * Given A = [−1, −3], the function should return 1.
- *
- * Write an efficient algorithm for the following assumptions:
- *
- * N is an integer within the range [1..100,000];
- * each element of array A is an integer within the range [−1,000,000..1,000,000].
- *
- * @author Girchev N.A.
- * Date: 10.03.2020
- */
-public class Task1FindFirstMissingNumber {
+public class Task1FindFirstMissingNumberSolution1 {
 
     public static void main(String[] args) {
         System.out.println("TEST1");

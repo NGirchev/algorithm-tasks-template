@@ -1,22 +1,26 @@
 package ru.girchev.tasks2021.sequence;
 
+import static ru.girchev.core.Executor.executeAllSolutions;
+
 import java.util.Arrays;
 import java.util.List;
+import lombok.SneakyThrows;
+import ru.girchev.core.SolutionMethod;
 
 /**
+ * Write "input" sequence like below result: 1-3,5-6,9
  *
- * @author Girchev N.A.
- * Date: 25.01.2021
+ * @author Girchev N.A. Date: 25.01.2021
  */
-public class Task1Sequence {
+public abstract class Task1Sequence {
 
-    private static final List<Integer> INPUT = Arrays.asList(3, 6, 9, 2, 1, 5);
+  protected static List<Integer> input = Arrays.asList(3, 6, 9, 2, 1, 5);
 
-    public static void main(String[] args) {
-        System.out.println("result: " + format(INPUT)); // result: 1-3,5-6,9
-    }
+  @SneakyThrows
+  public static void main(String[] args) {
+    executeAllSolutions(Task1Sequence.class, input);
+  }
 
-    public static String format(List<Integer> in) {
-        return "";
-    }
+  @SolutionMethod
+  protected abstract String format(List<Integer> input);
 }

@@ -19,5 +19,5 @@ public abstract class Test1BinaryGap {
   }
 
   @SolutionMethod
-  protected abstract int fibonacciFunction(int n);
+  protected abstract int findGap(int n);
 }

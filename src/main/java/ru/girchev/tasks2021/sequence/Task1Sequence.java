@@ -1,11 +1,13 @@
 package ru.girchev.tasks2021.sequence;
 
 import static ru.girchev.core.Executor.executeAllSolutions;
+import static ru.girchev.core.Executor.start;
 
 import java.util.Arrays;
 import java.util.List;
 import lombok.SneakyThrows;
 import ru.girchev.core.SolutionMethod;
+import ru.girchev.core.Utils;
 
 /**
  * Write "input" sequence like below result: 1-3,5-6,9
@@ -18,7 +20,7 @@ public abstract class Task1Sequence {
 
   @SneakyThrows
   public static void main(String[] args) {
-    executeAllSolutions(Task1Sequence.class, input);
+    start(Utils.getExecutionType(args), Task1Sequence.class, "1-3,5-6,9", input);
   }
 
   @SolutionMethod

@@ -1,9 +1,10 @@
 package ru.girchev.tasks2021.sequence;
 
-import static ru.girchev.core.Executor.executeAllSolutions;
+import static ru.girchev.core.Executor.start;
 
 import lombok.SneakyThrows;
 import ru.girchev.core.SolutionMethod;
+import ru.girchev.core.Utils;
 
 /**
  * You have a sorted array of Integer. Needs make sorted array of squares Integer numbers.
@@ -21,7 +22,7 @@ public abstract class Task2SquareSeq {
   @SneakyThrows
   @SuppressWarnings("all")
   public static void main(String[] args) {
-    executeAllSolutions(Task2SquareSeq.class, input);
+    start(Utils.getExecutionType(args), Task2SquareSeq.class, "", input);
   }
 
   @SolutionMethod

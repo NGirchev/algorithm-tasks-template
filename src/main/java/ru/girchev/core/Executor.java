@@ -5,6 +5,7 @@ import static ru.girchev.core.ReflectionUtils.getSubTypes;
 import static ru.girchev.core.ReflectionUtils.invoke;
 
 import java.lang.reflect.Method;
+import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -13,6 +14,8 @@ import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.function.Supplier;
+import java.util.stream.Collectors;
+import lombok.NonNull;
 import lombok.SneakyThrows;
 import org.apache.commons.lang3.tuple.Pair;
 
@@ -31,16 +34,50 @@ public class Executor {
   }
 
   @SuppressWarnings({"rawtypes"})
-  public static void executeAllSolutions(Class aClass, Object... args) {
-    getSubTypes(aClass).forEach(sub -> executeSolution(sub, args));
+  public static void start(
+      ExecutionType executionType,
+      Class mainTaskClass,
+      Object expectedResult,
+      Object... args) {
+    Map<String, Pair<Long, Object>> resultMap = executeAllSolutions(mainTaskClass, args);
+    if (executionType == ExecutionType.ALL) {
+      handleResults(resultMap, mainTaskClass, expectedResult);
+    } else if (executionType == ExecutionType.SINGLE) {
+      handleResults(resultMap);
+    } else {
+      throw new UnsupportedOperationException("Not implemented for ExecutionType = " + executionType);
+    }
+  }
+
+  @SuppressWarnings({"rawtypes"})
+  public static void handleResults(
+      Map<String, Pair<Long, Object>> resultsMap,
+      Class mainTaskClass,
+      @NonNull Object expectedResult) {
+    Utils.print(
+        mainTaskClass.getSimpleName(),
+        resultsMap.values().stream()
+            .map(Pair::getValue)
+            .anyMatch(expectedResult::equals)
+    );
+  }
+
+  public static void handleResults(Map<String, Pair<Long, Object>> resultsMap) {
+    resultsMap.forEach((key, value) -> Utils.print("Solution " + key + ": ", value));
+  }
+
+  @SuppressWarnings({"rawtypes"})
+  public static Map<String, Pair<Long, Object>> executeAllSolutions(Class mainTaskClass,
+      Object... args) {
+    return getSubTypes(mainTaskClass).stream()
+        .collect(Collectors.toMap(Class::getSimpleName, sub -> executeSolution(sub, args)));
   }
 
   @SneakyThrows
-  public static void executeSolution(Class<?> aClass, Object... args) {
-    Method solutionMethod = getSolutionMethod(aClass.getSuperclass());
+  public static Pair<Long, Object> executeSolution(Class<?> implementationClass, Object... args) {
+    Method solutionMethod = getSolutionMethod(implementationClass.getSuperclass());
     solutionMethod.setAccessible(true);
-    Utils.print("Solution " + aClass.getSimpleName() + ": ",
-        executeInBenchmark(() -> invoke(solutionMethod, aClass, args)));
+    return executeInBenchmark(() -> invoke(solutionMethod, implementationClass, args));
   }
 
   public static <T> Pair<Long, T> executeInBenchmark(Supplier<T> supplier) {

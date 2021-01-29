@@ -1,10 +1,11 @@
 package ru.girchev.tasks2021.number;
 
-import static ru.girchev.core.Executor.executeAllSolutions;
+import static ru.girchev.core.Executor.start;
 
 import java.util.stream.IntStream;
 import lombok.SneakyThrows;
 import ru.girchev.core.SolutionMethod;
+import ru.girchev.core.Utils;
 
 /**
  * Write a function:
@@ -34,7 +35,7 @@ public abstract class Task1FindFirstMissingNumberInStaticArray {
   @SneakyThrows
   @SuppressWarnings("all")
   public static void main(String[] args) {
-    executeAllSolutions(Task1FindFirstMissingNumberInStaticArray.class, input);
+    start(Utils.getExecutionType(args), Task1FindFirstMissingNumberInStaticArray.class, 0, input);
   }
 
   @SolutionMethod

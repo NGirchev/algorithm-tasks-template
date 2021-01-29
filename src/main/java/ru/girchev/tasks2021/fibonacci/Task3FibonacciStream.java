@@ -1,12 +1,14 @@
 package ru.girchev.tasks2021.fibonacci;
 
-import static ru.girchev.core.Executor.executeAllSolutions;
+import static ru.girchev.core.Executor.start;
 
 import lombok.SneakyThrows;
 import ru.girchev.core.SolutionMethod;
+import ru.girchev.core.Utils;
 
 /**
- * Write a function:
+ * Write a function fibonacci using java stream (numbers is 0, 1, 1, 2, 3, 5, 8): For example: If
+ * n=6 Result = 8
  *
  * @author Girchev N.A. Date: 10.03.2020
  */
@@ -14,10 +16,7 @@ public abstract class Task3FibonacciStream {
 
   @SneakyThrows
   public static void main(String[] args) {
-    System.out.println("Solution for n=6");
-    executeAllSolutions(Task3FibonacciStream.class, 6);
-    System.out.println("Solution for n=42");
-    executeAllSolutions(Task3FibonacciStream.class, 42);
+    start(Utils.getExecutionType(args), Task3FibonacciStream.class, 267914296, 42);
   }
 
   @SolutionMethod

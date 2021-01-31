@@ -15,7 +15,7 @@ import ru.girchev.tasks2021.sequence.Task1Sequence;
  */
 public class AllTasksExecutor {
 
-  private static final String[] START_ARGS = new String[]{ALL_TYPE_PROPERTY};
+  protected static final String[] START_ARGS = new String[]{ALL_TYPE_PROPERTY};
 
   public static void main(String[] args) {
     TaskExample.main(START_ARGS);

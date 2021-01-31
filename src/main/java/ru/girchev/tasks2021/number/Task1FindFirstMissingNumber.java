@@ -31,7 +31,7 @@ import ru.girchev.core.Utils;
  *
  * @author Girchev N.A. Date: 10.03.2020
  */
-public abstract class Task1FindFirstMissingNumberInStaticArray {
+public abstract class Task1FindFirstMissingNumber {
 
   static int[] input1, input2, input3, input4, input5;
   static int result4;
@@ -58,7 +58,7 @@ public abstract class Task1FindFirstMissingNumberInStaticArray {
   @SneakyThrows
   @SuppressWarnings("all")
   public static void main(String[] args) {
-    start(Utils.getExecutionType(args), Task1FindFirstMissingNumberInStaticArray.class,
+    start(Utils.getExecutionType(args), Task1FindFirstMissingNumber.class,
         new Condition(5, input1),
         new Condition(4, input2),
         new Condition(1, input3),

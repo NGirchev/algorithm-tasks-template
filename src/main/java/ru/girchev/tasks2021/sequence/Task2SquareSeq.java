@@ -3,6 +3,7 @@ package ru.girchev.tasks2021.sequence;
 import static ru.girchev.core.Executor.start;
 
 import lombok.SneakyThrows;
+import ru.girchev.core.Condition;
 import ru.girchev.core.SolutionMethod;
 import ru.girchev.core.Utils;
 
@@ -17,12 +18,13 @@ import ru.girchev.core.Utils;
  */
 public abstract class Task2SquareSeq {
 
-  protected static int[] input = new int[]{2, 4, 7, 9};
+  static int[] input = new int[]{2, 4, 7, 9};
 
   @SneakyThrows
   @SuppressWarnings("all")
   public static void main(String[] args) {
-    start(Utils.getExecutionType(args), Task2SquareSeq.class, "", input);
+    start(Utils.getExecutionType(args), Task2SquareSeq.class,
+        new Condition("", input));
   }
 
   @SolutionMethod

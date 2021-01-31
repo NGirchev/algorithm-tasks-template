@@ -9,6 +9,8 @@ import lombok.SneakyThrows;
 import org.reflections8.Reflections;
 
 /**
+ * Utility class for reflection methods.
+ *
  * @author Girchev N.A. Date: 29.01.2021
  */
 class ReflectionUtils {

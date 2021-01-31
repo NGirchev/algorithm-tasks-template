@@ -3,6 +3,7 @@ package ru.girchev.tasks2021.binary;
 import static ru.girchev.core.Executor.start;
 
 import lombok.SneakyThrows;
+import ru.girchev.core.Condition;
 import ru.girchev.core.SolutionMethod;
 import ru.girchev.core.Utils;
 
@@ -15,9 +16,13 @@ import ru.girchev.core.Utils;
  */
 public abstract class Test1BinaryGap {
 
+  static int input = 529;
+  static int result = 4;
+
   @SneakyThrows
   public static void main(String[] args) {
-    start(Utils.getExecutionType(args), Test1BinaryGap.class, "4", 529);
+    start(Utils.getExecutionType(args), Test1BinaryGap.class,
+        new Condition(result, input));
   }
 
   @SolutionMethod

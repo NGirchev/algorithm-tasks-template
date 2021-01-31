@@ -1,11 +1,11 @@
 package ru.girchev.tasks2021.sequence;
 
-import static ru.girchev.core.Executor.executeAllSolutions;
 import static ru.girchev.core.Executor.start;
 
 import java.util.Arrays;
 import java.util.List;
 import lombok.SneakyThrows;
+import ru.girchev.core.Condition;
 import ru.girchev.core.SolutionMethod;
 import ru.girchev.core.Utils;
 
@@ -16,11 +16,12 @@ import ru.girchev.core.Utils;
  */
 public abstract class Task1Sequence {
 
-  protected static List<Integer> input = Arrays.asList(3, 6, 9, 2, 1, 5);
+  static List<Integer> input = Arrays.asList(3, 6, 9, 2, 1, 5);
 
   @SneakyThrows
   public static void main(String[] args) {
-    start(Utils.getExecutionType(args), Task1Sequence.class, "1-3,5-6,9", input);
+    start(Utils.getExecutionType(args), Task1Sequence.class,
+        new Condition("1-3,5-6,9", input));
   }
 
   @SolutionMethod

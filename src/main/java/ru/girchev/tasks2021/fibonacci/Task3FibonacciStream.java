@@ -3,6 +3,7 @@ package ru.girchev.tasks2021.fibonacci;
 import static ru.girchev.core.Executor.start;
 
 import lombok.SneakyThrows;
+import ru.girchev.core.Condition;
 import ru.girchev.core.SolutionMethod;
 import ru.girchev.core.Utils;
 
@@ -14,9 +15,13 @@ import ru.girchev.core.Utils;
  */
 public abstract class Task3FibonacciStream {
 
+  static int input = 42;
+  static int result = 267914296;
+
   @SneakyThrows
   public static void main(String[] args) {
-    start(Utils.getExecutionType(args), Task3FibonacciStream.class, 267914296, 42);
+    start(Utils.getExecutionType(args), Task3FibonacciStream.class,
+        new Condition(result, input));
   }
 
   @SolutionMethod

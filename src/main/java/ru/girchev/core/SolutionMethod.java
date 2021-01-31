@@ -6,6 +6,8 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
+ * Marked annotation for methods, which need to implement in some solution.
+ *
  * @author Girchev N.A. Date: 27.01.2021
  */
 @Retention(RetentionPolicy.RUNTIME)

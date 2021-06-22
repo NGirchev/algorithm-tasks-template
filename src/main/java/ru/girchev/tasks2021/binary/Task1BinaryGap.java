@@ -1,11 +1,11 @@
 package ru.girchev.tasks2021.binary;
 
-import static ru.girchev.core.Executor.start;
-
 import lombok.SneakyThrows;
 import ru.girchev.core.Condition;
 import ru.girchev.core.SolutionMethod;
 import ru.girchev.core.Utils;
+
+import static ru.girchev.core.Executor.start;
 
 /**
  * BinaryGap Find longest sequence of zeros in binary representation of an integer.
@@ -14,15 +14,15 @@ import ru.girchev.core.Utils;
  *
  * @author Girchev N.A. Date: 11.03.2020
  */
-public abstract class Test1BinaryGap {
+public abstract class Task1BinaryGap {
 
   static int input = 529;
   static int result = 4;
 
   @SneakyThrows
   public static void main(String[] args) {
-    start(Utils.getExecutionType(args), Test1BinaryGap.class,
-        new Condition(result, input));
+    start(Utils.getExecutionType(args), Task1BinaryGap.class,
+            new Condition(result, input));
   }
 
   @SolutionMethod

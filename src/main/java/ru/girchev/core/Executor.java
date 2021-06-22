@@ -1,26 +1,20 @@
 package ru.girchev.core;
 
-import static ru.girchev.core.ReflectionUtils.getSolutionMethod;
-import static ru.girchev.core.ReflectionUtils.getSubTypes;
-import static ru.girchev.core.ReflectionUtils.invoke;
-import static ru.girchev.core.Utils.createConditionOutput;
+import lombok.NonNull;
+import lombok.SneakyThrows;
+import org.apache.commons.lang3.tuple.Pair;
 
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.Map;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
+import java.util.Objects;
+import java.util.concurrent.*;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import lombok.NonNull;
-import lombok.SneakyThrows;
-import org.apache.commons.lang3.tuple.Pair;
+
+import static ru.girchev.core.ReflectionUtils.*;
+import static ru.girchev.core.Utils.createConditionOutput;
 
 /**
  * Main class for task execution.
@@ -61,9 +55,8 @@ public class Executor {
             .toArray();
         System.out.println("Start all solutions for condition: " + createConditionOutput(args));
         executeAllSolutions(mainTaskClass, condition.args())
-            .forEach((key, value) -> Utils.print("Solution " + key + ": ", value,
-                String.valueOf(condition.expectedResult())
-                    .equals(String.valueOf(value.getRight()))));
+                .forEach((key, value) -> Utils.print("Solution " + key + ": ", value,
+                        Objects.deepEquals(condition.expectedResult(), value.getRight())));
       }
     } else {
       throw new UnsupportedOperationException(

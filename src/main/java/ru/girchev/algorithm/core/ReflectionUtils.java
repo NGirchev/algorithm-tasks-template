@@ -1,4 +1,4 @@
-package ru.girchev.core;
+package ru.girchev.algorithm.core;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;

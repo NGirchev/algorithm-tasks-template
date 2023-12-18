@@ -1,10 +1,10 @@
-package ru.girchev.core;
+package ru.girchev.algorithm.core;
 
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
-import ru.girchev.AllTasksExecutor;
+import ru.girchev.algorithm.AllTasksExecutor;
 
 /**
  * Supports two execution type:<br> - ALL tasks from AllTasksExecutor<br> - SINGLE task, but all

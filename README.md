@@ -1,6 +1,6 @@
 ### This is a framework for simple algorithmic tasks for interview.
 
-`ru.girchev.AllTasksExecutor` - contains list of all tasks. If run AllTasksExecutor, then starts all
+`ru.girchev.algorithm.AllTasksExecutor` - contains list of all tasks. If run AllTasksExecutor, then starts all
 solutions for each task. Task will be success, if at least one solution is success. <p/>
 For example:
 
@@ -9,9 +9,9 @@ For example:
   and `ru.girchev.tasks2021.TaskExampleSolution2`.
 - `ru.girchev.tasks2021.TaskExampleSolution1` is success
   and `ru.girchev.tasks2021.TaskExampleSolution2` is wrong.
-- `ru.girchev.AllTasksExecutor` find and start `ru.girchev.tasks2021.TaskExampleSolution1`
+- `ru.girchev.algorithm.AllTasksExecutor` find and start `ru.girchev.tasks2021.TaskExampleSolution1`
   and `ru.girchev.tasks2021.TaskExampleSolution2`.
-- `ru.girchev.AllTasksExecutor` will print _✔TaskExample_ - it's mean success
+- `ru.girchev.algorithm.AllTasksExecutor` will print _✔TaskExample_ - it's mean success
 
 #### Will be printed:
 
@@ -21,7 +21,7 @@ For example:
 
 ### How to write your own solution:
 
-1. Choose a task in `ru.girchev.AllTasksExecutor`.
+1. Choose a task in `ru.girchev.algorithm.AllTasksExecutor`.
 2. Create an implementation of task class. You can run your implementation directly, or you can run
    AllTasksExecutor.
 

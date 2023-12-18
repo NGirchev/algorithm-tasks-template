@@ -1,10 +1,10 @@
-package ru.girchev.tasks2021.string;
+package ru.girchev.algorithm.tasks2021.string;
 
 import lombok.SneakyThrows;
-import ru.girchev.core.Condition;
-import ru.girchev.core.Executor;
-import ru.girchev.core.SolutionMethod;
-import ru.girchev.core.Utils;
+import ru.girchev.algorithm.core.Condition;
+import ru.girchev.algorithm.core.Executor;
+import ru.girchev.algorithm.core.SolutionMethod;
+import ru.girchev.algorithm.core.Utils;
 
 /**
  * Write a function, that check an input string are palindrome.

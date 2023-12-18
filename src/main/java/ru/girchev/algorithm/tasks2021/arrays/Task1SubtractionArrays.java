@@ -1,11 +1,11 @@
-package ru.girchev.tasks2021.arrays;
+package ru.girchev.algorithm.tasks2021.arrays;
 
 import lombok.SneakyThrows;
-import ru.girchev.core.Condition;
-import ru.girchev.core.SolutionMethod;
-import ru.girchev.core.Utils;
+import ru.girchev.algorithm.core.Condition;
+import ru.girchev.algorithm.core.SolutionMethod;
+import ru.girchev.algorithm.core.Utils;
 
-import static ru.girchev.core.Executor.start;
+import static ru.girchev.algorithm.core.Executor.start;
 
 /**
  * Write a function that takes two arrays, and subtract array B from array A.

@@ -1,4 +1,4 @@
-package ru.girchev.tasks2021;
+package ru.girchev.algorithm;
 
 import lombok.SneakyThrows;
 

@@ -1,4 +1,4 @@
-package ru.girchev.tasks2021;
+package ru.girchev.algorithm;
 
 /**
  * @author Girchev N.A. Date: 31.01.2021

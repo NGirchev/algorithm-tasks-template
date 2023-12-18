@@ -1,11 +1,11 @@
-package ru.girchev.tasks2021.binary;
+package ru.girchev.algorithm.tasks2021.binary;
 
 import lombok.SneakyThrows;
-import ru.girchev.core.Condition;
-import ru.girchev.core.SolutionMethod;
-import ru.girchev.core.Utils;
+import ru.girchev.algorithm.core.Condition;
+import ru.girchev.algorithm.core.SolutionMethod;
+import ru.girchev.algorithm.core.Utils;
 
-import static ru.girchev.core.Executor.start;
+import static ru.girchev.algorithm.core.Executor.start;
 
 /**
  * BinaryGap Find longest sequence of zeros in binary representation of an integer.

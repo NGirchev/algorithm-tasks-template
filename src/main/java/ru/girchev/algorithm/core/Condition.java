@@ -1,4 +1,4 @@
-package ru.girchev.core;
+package ru.girchev.algorithm.core;
 
 import lombok.Data;
 import lombok.experimental.Accessors;

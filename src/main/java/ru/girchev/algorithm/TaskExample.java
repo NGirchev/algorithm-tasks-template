@@ -1,11 +1,11 @@
-package ru.girchev.tasks2021;
+package ru.girchev.algorithm;
 
-import static ru.girchev.core.Executor.start;
+import static ru.girchev.algorithm.core.Executor.start;
 
 import lombok.SneakyThrows;
-import ru.girchev.core.Condition;
-import ru.girchev.core.SolutionMethod;
-import ru.girchev.core.Utils;
+import ru.girchev.algorithm.core.Condition;
+import ru.girchev.algorithm.core.SolutionMethod;
+import ru.girchev.algorithm.core.Utils;
 
 /**
  * Write a solution for a+b
